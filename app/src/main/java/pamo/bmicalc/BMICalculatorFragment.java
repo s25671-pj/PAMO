@@ -13,7 +13,6 @@ import androidx.fragment.app.Fragment;
 public class BMICalculatorFragment extends Fragment {
 
     private EditText enterWeight, enterHeight;
-    private Button calculate;
     private TextView result;
 
     @Override
@@ -23,7 +22,7 @@ public class BMICalculatorFragment extends Fragment {
 
         enterWeight = view.findViewById(R.id.enterWeight);
         enterHeight = view.findViewById(R.id.enterHeight);
-        calculate = view.findViewById(R.id.calculate);
+        Button calculate = view.findViewById(R.id.calculate);
         result = view.findViewById(R.id.result);
 
         enterWeight.setOnClickListener(a -> enterWeight.setText(""));
@@ -41,30 +40,10 @@ public class BMICalculatorFragment extends Fragment {
         if (!weightText.isEmpty() && !heightText.isEmpty()) {
             try {
                 float weight = Float.parseFloat(weightText);
-                float height = Float.parseFloat(heightText) / 100f;
+                float height = Float.parseFloat(heightText);
 
-                if (weight > 0 && height > 0) {
-                    float bmi = weight / (height * height);
-                    String bmiStatus;
-
-                    if (bmi < 18.5) {
-                        bmiStatus = "Niedowaga";
-                    } else if (bmi < 25) {
-                        bmiStatus = "Prawidłowa masa";
-                    } else if (bmi < 30) {
-                        bmiStatus = "Nadwaga";
-                    } else if (bmi < 35) {
-                        bmiStatus = "Otyłość I stopnia";
-                    } else if (bmi < 40) {
-                        bmiStatus = "Otyłość II stopnia";
-                    } else {
-                        bmiStatus = "Otyłość III stopnia";
-                    }
-
-                    result.setText("Twoje BMI: " + String.format("%.2f", bmi) + "\nKategoria: " + bmiStatus);
-                } else {
-                    result.setText("Waga i wzrost muszą być większe od zera!");
-                }
+                String resultMsg = BMICalculator.calculate(weight, height);
+                result.setText(resultMsg);
             } catch (NumberFormatException e) {
                 result.setText("Podaj poprawne wartości liczbowe!");
             }
@@ -72,4 +51,5 @@ public class BMICalculatorFragment extends Fragment {
             result.setText("Uzupełnij wszystkie pola!");
         }
     }
+
 }

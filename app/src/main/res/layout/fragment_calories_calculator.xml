@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -13,7 +12,7 @@
         android:layout_marginEnd="80dp"
         android:ems="10"
         android:inputType="numberSigned"
-        android:text="Podaj wzrost"
+        android:hint="Podaj wzrost"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enterWeight2" />
 
@@ -25,7 +24,7 @@
         android:layout_marginEnd="80dp"
         android:ems="10"
         android:inputType="numberSigned"
-        android:text="Podaj wiek"
+        android:hint="Podaj wiek"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enterHeight2" />
 
@@ -35,7 +34,7 @@
         android:layout_height="91dp"
         android:layout_marginTop="38dp"
         android:layout_marginEnd="73dp"
-        android:text="Kalkulator dziennego zapotrzebowania kalorycznego"
+        android:hint="Kalkulator dziennego zapotrzebowania kalorycznego"
         android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,7 +46,7 @@
         android:layout_height="83dp"
         android:layout_marginStart="80dp"
         android:layout_marginTop="19dp"
-        android:text=" "
+        android:hint=" "
         android:textSize="20sp"
         android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,7 +60,7 @@
         android:layout_marginEnd="80dp"
         android:ems="10"
         android:inputType="numberSigned"
-        android:text="Podaj masę"
+        android:hint="Podaj masę"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroupGender" />
@@ -72,7 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="160dp"
         android:layout_marginBottom="80dp"
-        android:text="Oblicz"
+        android:hint="Oblicz"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

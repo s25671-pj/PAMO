@@ -4,10 +4,10 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Recipe {
-    public String name;
-    public String description;
-    public int calories;
-    public String dietType;
+    public final String name;
+    public final String description;
+    public final int calories;
+    public final String dietType;
 
     public Recipe(String name, String description, int calories, String dietType) {
         this.name = name;
