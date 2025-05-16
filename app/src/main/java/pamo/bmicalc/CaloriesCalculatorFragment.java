@@ -9,6 +9,14 @@ import android.view.ViewGroup;
 import android.widget.*;
 import androidx.fragment.app.Fragment;
 
+/**
+ * Fragment odpowiedzialny za obliczanie dziennego zapotrzebowania kalorycznego użytkownika
+ * na podstawie wzoru Harrisa-Benedicta. Wymaga podania wagi, wzrostu, wieku, płci
+ * oraz poziomu aktywności fizycznej - wynik jest zapisywany do SharedPreferences.
+ *
+ * Pokazuje wynik w formie liczby kalorii, na podstawie których wyświetlane są w zakładce Przepisy
+ * propozycje umożliwiające zaspokojenie wyliczonego zapotrzebowania kalorycznego
+ */
 public class CaloriesCalculatorFragment extends Fragment {
 
     EditText weightInput, heightInput, ageInput;
@@ -17,6 +25,15 @@ public class CaloriesCalculatorFragment extends Fragment {
     Button calculateButton;
     TextView resultText;
 
+    /**
+     * Tworzy widok fragmentu, ustawia wszystkie pola wejściowe i przycisk liczenia kalorii.
+     * Obsługuje też walidację danych, ustawienie spinnera z aktywnością i zapis wyniku.
+     *
+     * @param inflater obiekt odpowiedzialny za przekonwertownaie pliku XML na widok
+     * @param container kontener (ViewGroup), do którego może zostać dołączony widok fragmentu
+     * @param savedInstanceState stan zapisany przy poprzednim utworzeniu fragmentu
+     * @return gotowy widok fragmentu (obliczona dziennego zapotrzebowania kalorycznego)
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_calories_calculator, container, false);
@@ -30,6 +47,7 @@ public class CaloriesCalculatorFragment extends Fragment {
         resultText = view.findViewById(R.id.result2);
         resultText.setVisibility(View.GONE);
 
+        // Adapter do spinnera z poziomami aktywności
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 requireContext(),
                 R.array.activity_levels,
@@ -122,6 +140,7 @@ public class CaloriesCalculatorFragment extends Fragment {
         return view;
     }
 
+    //Wyświetla wiadomość na ekranie.
     private void showToast(String message) {
         Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
     }

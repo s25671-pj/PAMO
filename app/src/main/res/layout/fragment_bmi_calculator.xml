@@ -69,4 +69,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/showChartButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="137dp"
+        android:layout_marginBottom="75dp"
+        android:text="Pokaż wykres BMI"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/bmiChartImage"
+        android:layout_width="402dp"
+        android:layout_height="330dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="22dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/mock_bmi_chart"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/enterWeight"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

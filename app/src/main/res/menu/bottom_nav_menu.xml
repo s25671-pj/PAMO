@@ -12,4 +12,9 @@
         android:id="@+id/nav_recipes"
         android:icon="?attr/actionModePasteDrawable"
         android:title="Przepisy" />
+
+    <item
+        android:id="@+id/nav_shopping"
+        android:icon="@android:drawable/ic_dialog_email"
+        android:title="Lista zakupów" />
 </menu>
